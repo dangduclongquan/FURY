@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlockBuildingController : MonoBehaviour
+public class BuildController : MonoBehaviour
 {
     [SerializeField] Transform headTransform;
-    [SerializeField] GameObject block;
+    //[SerializeField] GameObject block;
     [SerializeField] GameObject blockIndicator;
     GameObject indicator;
 
@@ -19,7 +19,7 @@ public class BlockBuildingController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 newBlockPosition = Vector3.down;
+        Vector3Int newBlockPosition = Vector3Int.down;
 
         RaycastHit hit;
 
@@ -29,17 +29,17 @@ public class BlockBuildingController : MonoBehaviour
         if (Physics.Raycast(headTransform.position, headTransform.forward, out hit, 3, defaultLayerMask))
         {
             Vector3 hitPlace = hit.point + hit.normal / 2;
-            newBlockPosition = new Vector3(Mathf.Floor(hitPlace.x) + 0.5f, Mathf.Floor(hitPlace.y) + 0.5f, Mathf.Floor(hitPlace.z) + 0.5f);
+            newBlockPosition = Vector3Int.FloorToInt(hitPlace);
             if (Physics.CheckBox(newBlockPosition, Vector3.one * 0.25f, Quaternion.identity, entityLayerMask))
             {
-                newBlockPosition = Vector3.down;
+                newBlockPosition = Vector3Int.down;
             }
 
         }
 
         if (newBlockPosition != Vector3.down)
         {
-            indicator.transform.position = newBlockPosition;
+            indicator.transform.position = newBlockPosition+Vector3.one*0.5f;
             indicator.SetActive(true);
         }
         else
@@ -48,7 +48,7 @@ public class BlockBuildingController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1) && newBlockPosition != Vector3.down)
         {
-            Instantiate(block, newBlockPosition, Quaternion.identity);
+            new Cube(newBlockPosition);
         }
     }
 }

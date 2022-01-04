@@ -5,15 +5,35 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class BulletController : MonoBehaviour
 {
-    public float speed;
-    public float damage;
+    public float speed
+    {
+        get
+        {
+            return rigidBody.velocity.magnitude;
+        }
+        set
+        {
+            rigidBody.velocity = rigidBody.transform.forward * value;
+        }
+    }
+    float _damage;
+    public float damage
+    {
+        get
+        {
+            return _damage;
+        }
+        set
+        {
+            _damage = value;
+        }
+    }
     Rigidbody rigidBody;
 
     // Start is called before the first frame update
     void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
-        rigidBody.velocity = rigidBody.transform.forward * speed;
     }
 
     private void OnCollisionEnter(Collision collision)

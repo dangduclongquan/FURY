@@ -53,15 +53,16 @@
     <UnityVersion>2021.2.0f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\BlockColorController.cs" />
+    <Compile Include="Assets\CubeColorController.cs" />
     <Compile Include="Assets\Health.cs" />
+    <Compile Include="Assets\Cube.cs" />
     <Compile Include="Assets\GunController.cs" />
     <Compile Include="Assets\MovementController.cs" />
     <Compile Include="Assets\EnemySpawner.cs" />
     <Compile Include="Assets\BulletController.cs" />
-    <Compile Include="Assets\BlockBuildingController.cs" />
+    <Compile Include="Assets\BuildController.cs" />
     <Compile Include="Assets\EnemyController.cs" />
-    <Compile Include="Assets\Block.cs" />
+    <Compile Include="Assets\Bullet.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

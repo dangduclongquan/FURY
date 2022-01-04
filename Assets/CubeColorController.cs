@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlockColorController : MonoBehaviour
+public class CubeColorController : MonoBehaviour
 {
     [SerializeField] Health blockHealth;
 

@@ -434,7 +434,7 @@ Transform:
   m_GameObject: {fileID: 461687822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 1, z: 10}
+  m_LocalScale: {x: 100, y: 1, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -453,7 +453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Tracked: {fileID: 461687826}
-  m_Size: {x: 100, y: 100, z: 100}
+  m_Size: {x: 1000, y: 100, z: 1000}
 --- !u!114 &461687828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -732,7 +732,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   headTransform: {fileID: 963194228}
-  block: {fileID: 8352544636040729109, guid: 57474f324b7ab1d4286cbf2f77e0740a, type: 3}
   blockIndicator: {fileID: 9090266501803832479, guid: 52329ed7a7187494bbf8923f3d9e7c90, type: 3}
 --- !u!114 &938024075
 MonoBehaviour:
@@ -746,8 +745,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2a371c7f34402c49b787b1f32d665bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 2015411760596003326, guid: 5c4f7fefc9df759439247144042f7d61, type: 3}
   barrel: {fileID: 1482541995}
+  bulletSpeed: 100
+  bulletDamage: 25
   fireRate: 10
 --- !u!136 &938024076
 CapsuleCollider:
